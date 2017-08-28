@@ -4,44 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <title>Golf Equalizer</title>
+    <link rel="stylesheet" href="assets/lib/foundation/css/foundation.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="assets/lib/foundation/js/foundation.min.js"></script>
     <script src="assets/js/main.js"></script>
 </head>
 
 <body>
-<h1>Course</h1>
-<p>
-    <label for="course-slope-input">Course Slope</label>
-    <input id="course-slope-input">
-    <br>
-    <a href="https://ncrdb.usga.org/NCRDB/" target="_blank">Find slope on USGA...</a>
-</p>
+<div class="grid-container">
+    <h3>Course</h3>
+    <p>
+        <label for="course-slope-input">Course Slope</label>
+        <input id="course-slope-input" type="number" min="1" max="5" value="0" onkeyup="updateSlope()">
+        <a href="https://ncrdb.usga.org/NCRDB/" target="_blank">Find slope on USGA...</a>
+    </p>
 
-<h1>Players</h1>
-<p>
-<h2>New Player</h2>
-<p>
-    <label for="new-player-name-input">Name</label>
-    <input id="new-player-name-input">
-</p>
-<p>
-    <label for="new-player-handicap-input">Handicap</label>
-    <input id="new-player-handicap-input">
-</p>
-<button id="add-player" onclick="addPlayer">Add PLayer</button>
-</p>
+    <h3>Players</h3>
+    <p>
+    <p>
+        <label for="new-player-name-input">Name</label>
+        <input id="new-player-name-input" type="text">
+    </p>
+    <p>
+        <label for="new-player-handicap-input">Handicap</label>
+        <input id="new-player-handicap-input" type="number" min="1" max="3">
+    </p>
+    <button class="button" type="button" id="add-player" onclick="addPlayer()">Add Player</button>
+    </p>
 
-<table id="players-table">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Handicap</th>
-        <th>Course Handicap</th>
-        <th></th>
-    </tr>
-    </thead>
-</table>
+    <table id="players-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Handicap</th>
+            <th>Course Handicap</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="players-table-body">
+
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
 
